@@ -17,5 +17,8 @@
       "resources": ["data.json"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
 }

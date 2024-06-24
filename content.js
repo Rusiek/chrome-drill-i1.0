@@ -32,16 +32,25 @@ function fillForms(data) {
   console.log("Wypełnianie formularza...");
 
   // Znajdź wszystkie elementy odpowiedzi
-  const answers = document.querySelectorAll('.answer .d-flex.w-auto');
+  const answers = document.querySelectorAll(".answer .d-flex.w-auto");
+  const qtexts = document.querySelectorAll(".qtext");
 
   // Utwórz tablicę do przechowywania tekstu odpowiedzi
   let answerTexts = [];
+  let qTexts = [];
 
   // Przeiteruj przez wszystkie odpowiedzi i wyciągnij tekst
-  answers.forEach(answer => {
+  answers.forEach((answer) => {
     const text = answer.innerText.trim();
     if (text) {
       answerTexts.push(text);
+    }
+  });
+
+  qtexts.forEach((answer) => {
+    const text = answer.innerText.trim();
+    if (text) {
+      qTexts.push(text);
     }
   });
 
@@ -49,8 +58,13 @@ function fillForms(data) {
   console.log(answerTexts);
 
   // Jeśli chcesz wyświetlić tekst w konsoli jako jeden ciąg znaków
-  console.log(answerTexts.join('\n\n'));
+  console.log(answerTexts.join("\n\n"));
 
+  qtexts.forEach((question) => {
+    const qBox = question.querySelector('[dir="ltr"]');
+
+    console.log(qBox);
+  });
 
   answers.forEach((question) => {
     const answerBox = question.querySelector('[dir="ltr"]');
