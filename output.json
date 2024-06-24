@@ -1,0 +1,1167 @@
+{
+    "0": {
+        "Q": "Które z poniższych własności posiada interakcja procesów CSP?",
+        "A": {
+            "1": [
+                "-",
+                "Procesy działające w interakcji zawsze kończą swoje działanie jednocześnie"
+            ],
+            "2": [
+                "-",
+                "Procesy działające w interakcji zawsze zaczynają i kończą swoje działanie jednocześnie"
+            ],
+            "3": [
+                "+",
+                "Jedynym sposobem przekazywania informacji między procesami w przetwarzaniu równoległym (interakcji) są komunikaty"
+            ]
+        }
+    },
+    "1": {
+        "Q": "Czy dla niepowodzenia (failure) i dywergencji w CSP prawdziwe są następujące własności?",
+        "A": {
+            "1": [
+                "-",
+                "Odmowa procesu, to para (zdarzenie, które jest zabronione i zbiór pozostałych operacji alfabetu procesu)"
+            ],
+            "2": [
+                "+",
+                "Jeśli proces chce wziąć udział w zdarzeniu należącym do zbioru odmowy, to możliwe jest jego zakleszczenie"
+            ],
+            "3": [
+                "-",
+                "Dywergencja procesu P, to dowolny ślad, który prowadzi do powstania różnych śladów tej samej długości"
+            ],
+            "4": [
+                "+",
+                "Dywergencja procesu P, to dowolny ślad, który prowadzi do zachowania chaotycznego"
+            ]
+        }
+    },
+    "2": {
+        "Q": "Które z poniższych zdań określa CSP?",
+        "A": {
+            "1": [
+                "-",
+                "Proces to powiązany, spójny zbiór atrybutów systemu, a jego zachowanie nie zależy od kolejności zmian tych atrybutów"
+            ],
+            "2": [
+                "+",
+                "Proces to powiązany, spójny zbiór atrybutów systemu, który obserwujemy jako zmieniający się sekwencyjnie"
+            ],
+            "3": [
+                "-",
+                "Proces to ciąg zdarzeń częściowo od siebie zależnych"
+            ]
+        }
+    },
+    "3": {
+        "Q": "Rozważmy proces będący przeplotem trzech procesów P = (a -> P4 ||| a -> P5 ||| a -> P6). Które z poniższych zdań są prawdziwe?",
+        "A": {
+            "1": [
+                "-",
+                "Zdarzenie a zajdzie, jeżeli przynajmniej jeden z procesów P4, P6, P5 wyrazi na to zgodę"
+            ],
+            "2": [
+                "-",
+                "Dla zajścia zdarzenia a konieczne jest aby procesy P4, P6 wyraziły na niego zgodę"
+            ],
+            "3": [
+                "+",
+                "Procesy P4, P6, P5 działają niezależnie"
+            ],
+            "4": [
+                "-",
+                "Zdarzenie a jest spotkaniem P4, P6, P5"
+            ]
+        }
+    },
+    "4": {
+        "Q": "Który z poniższych warunków określa równoważność dwóch procesów P1, P2 algebry CSP w semantyce Hoare'a?",
+        "A": {
+            "1": [
+                "-",
+                "aP1 = aP2, failures(P1) = failures(P2)"
+            ],
+            "2": [
+                "+",
+                "aP1 = aP2, failures(P1) = failures(P2), divergences(P1) = divergences(P2)"
+            ],
+            "3": [
+                "-",
+                "failures(P1) = failures(P2)"
+            ],
+            "4": [
+                "-",
+                "aP1 = aP2"
+            ],
+            "5": [
+                "-",
+                "traces(P1) = traces(P2)"
+            ],
+            "6": [
+                "-",
+                "traces(P1) = traces(P2), failures(P1) = failures(P2), aP1 = aP2"
+            ]
+        }
+    },
+    "5": {
+        "Q": "Czy alternatywy w CSP posiadają następujące własności?",
+        "A": {
+            "1": [
+                "+",
+                "Alternatywa wewnętrzna może odrzucić wykonanie procesów stanowiących alternatywę"
+            ],
+            "2": [
+                "+",
+                "W alternatywie dozorowanej to otoczenie wybiera zdarzenie jednego z procesów"
+            ],
+            "3": [
+                "+",
+                "Wybór w alternatywie niedeterministycznej jest niewidoczny dla otoczenia"
+            ]
+        }
+    },
+    "6": {
+        "Q": "Który z warunków jest wystarczający, aby dwa procesy algebry CSP były równoważne w semantyce niepowodzeń?",
+        "A": {
+            "1": [
+                "-",
+                "Każdy z procesów jest wyznaczony jednoznacznie przez swój zbiór śladów i zbiory śladów tych procesów są identyczne"
+            ],
+            "2": [
+                "-",
+                "Zbiór śladów prowadzących do zakleszczenia dla jednego procesu jest identyczny z analogicznym zbiorem dla drugiego procesu"
+            ],
+            "3": [
+                "+",
+                "Zbiory niepowodzeń tych procesów są identyczne"
+            ],
+            "4": [
+                "+",
+                "Zbiór par złożonych ze śladu oraz zbioru zdarzeń, których proces “odmawia” po jego wykonaniu dla jednego procesu jest identyczny z analogicznym zbiorem dla drugiego procesu."
+            ]
+        }
+    },
+    "7": {
+        "Q": "Które z poniższych własności posiada ślad procesu CSP?",
+        "A": {
+            "1": [
+                "-",
+                "Ślad zawiera tylko zdarzenia widoczne dla otoczenia"
+            ],
+            "2": [
+                "+",
+                "Ślad zawiera zdarzenia należące do alfabetu procesu"
+            ],
+            "3": [
+                "+",
+                "Ślad to ciąg zdarzeń rozpoczynający się od zdarzenia rozpoczynającego działanie procesu"
+            ],
+            "4": [
+                "-",
+                "Ślad to każdy skończony ciąg zdarzeń rozpoczynający się od pewnego zdarzenia z alfabetu procesu"
+            ]
+        }
+    },
+    "8": {
+        "Q": "Jakie sposoby synchronizacji procesów są bezpośrednio dostępne w algebrze CSP?",
+        "A": {
+            "1": [
+                "+",
+                "Komunikacja blokująca (kanał komunikacyjny)"
+            ],
+            "2": [
+                "-",
+                "Bariery"
+            ],
+            "3": [
+                "+",
+                "Spotkania"
+            ],
+            "4": [
+                "-",
+                "Semafory"
+            ]
+        }
+    },
+    "9": {
+        "Q": "Które z poniższych własności cechują przeplot i interakcję procesów CSP?",
+        "A": {
+            "1": [
+                "+",
+                "Przetwarzanie równoległe procesów wymaga synchronizacji akcji składających się na komunikację pomiędzy tymi procesami."
+            ],
+            "2": [
+                "+",
+                "Interakcja dwóch procesów ze wspólnym zdarzeniem jest synchronizacją"
+            ],
+            "3": [
+                "-",
+                "Wspólne zdarzenie dwóch procesów w interakcji jest widoczne dla otoczenia"
+            ],
+            "4": [
+                "-",
+                "Przeplot dwóch procesów z tym samym prefiksem jest równoważny interakcji."
+            ]
+        }
+    },
+    "10": {
+        "Q": "Rozważmy proces CSP 𝑃1 = 𝑎 → 𝑃1 Jaka może być długość ciągów zdarzeń 𝑏 generowanych przez proces 𝑃 = (𝑎 → 𝑃1) Δ(𝑏→𝑆𝐾𝐼𝑃) zakładając, że 𝑏∉α𝑃1 oraz 𝑆𝐾𝐼𝑃 nie występuje w procesie 𝑃1 ?",
+        "A": {
+            "1": [
+                "-",
+                "Zawsze równa ilości zdarzeń α generowanych przez proces 𝑃"
+            ],
+            "2": [
+                "+",
+                "Dokładnie równa 1"
+            ],
+            "3": [
+                "-",
+                "Tak duża, jak zezwoli na to środowisko"
+            ]
+        }
+    },
+    "11": {
+        "Q": "Czy alternatywa dozorowana w CSP posiada następujące własności?",
+        "A": {
+            "1": [
+                "-",
+                "Warunki w dozorze są sprawdzane do wystąpienia jednego ze zdarzeń prefiksowych w środowisku."
+            ],
+            "2": [
+                "+",
+                "Zdarzenia prefiksowe występujące w dozorze są różne"
+            ],
+            "3": [
+                "-",
+                "Dozór, to ciąg warunków logicznych połączonych operacją OR."
+            ]
+        }
+    },
+    "12": {
+        "Q": "Który z warunków jest konieczny i wystarczający, aby dwa procesy algebry CSP były równoważne w semantyce śladów?",
+        "A": {
+            "1": [
+                "+",
+                "Każdy z procesów jest wyznaczony jednoznacznie przez swój zbiór śladów i zbiory śladów tych procesów są identyczne"
+            ],
+            "2": [
+                "-",
+                "Ślady oby procesów należą do tego samego uniwersum śladów. Zbiór śladów każdego procesu jest domknięty ze względu na prefiksowanie"
+            ],
+            "3": [
+                "-",
+                "Zbiory śladów tych procesów są identyczne"
+            ]
+        }
+    },
+    "13": {
+        "Q": "Rozważmy proces będący interakcją trzech procesów 𝑃 = {α → 𝑃1 || α → 𝑃2 || α → 𝑃3}. Które z poniższych zdań są prawdziwe?",
+        "A": {
+            "1": [
+                "+",
+                "Zdarzenie α jest spotkaniem P1, P2, P3"
+            ],
+            "2": [
+                "-",
+                "Procesy P1, P2, P3 działają niezależnie"
+            ],
+            "3": [
+                "-",
+                "Zdarzenie α zajdzie jeżeli przynajmniej jeden z procesów P1, P2, P3 wyrazi na to zgodę"
+            ]
+        }
+    },
+    "14": {
+        "Q": "Niech proces P będzie specjalizacją procesu Q w zbiorze ProcUniversum. Które z poniższych zdań są prawdziwe?",
+        "A": {
+            "1": [
+                "+",
+                "P ⊒ Q"
+            ],
+            "2": [
+                "-",
+                "P ⊑ Q"
+            ],
+            "3": [
+                "+",
+                "P ⊓ Q = Q"
+            ],
+            "4": [
+                "-",
+                "P ⊓ Q = P"
+            ],
+            "5": [
+                "-",
+                "Relacja ⊒ jest porządkiem totalnym na ProcUniversum"
+            ]
+        }
+    },
+    "15": {
+        "Q": "Niech A ⊆ Σ będzie dowolnym zbiorem zdarzeń procesów CSP. Które z poniższych warunków definiują poprawnie CHAOS_A?",
+        "A": {
+            "1": [
+                "+",
+                "αCHAOS_A = A, traces(CHAOS_A) = A*, failures(CHAOS_A) = A* x 2^A"
+            ],
+            "2": [
+                "-",
+                "αCHAOS_A = A, traces(CHAOS_A) = Σ*, failures(CHAOS_A) = A* x 2^A"
+            ],
+            "3": [
+                "+",
+                "CHAOS_A = STOP ⊓ (?x: A → CHAOS_A)"
+            ],
+            "4": [
+                "-",
+                "CHAOS_A = CHAOS_Σ ⊓ (?x: A → CHAOS_A)"
+            ]
+        }
+    },
+    "16": {
+        "Q": "Rozważmy relację Lamporta na zbiorze zdarzeń generowanych przez system działający sekwencyjnie uzupełnioną o diagonalę. Które z poniższych własności spełnia ta relacja?",
+        "A": {
+            "1": [
+                "-",
+                "Jest równoważnością"
+            ],
+            "2": [
+                "-",
+                "Jest ostrym porządkiem"
+            ],
+            "3": [
+                "+",
+                "Jest porządkiem totalnym"
+            ],
+            "4": [
+                "+",
+                "Jest porządkiem częściowym"
+            ]
+        }
+    },
+    "17": {
+        "Q": "Jak długi ciąg zdarzeń typu b mogą wykonać proces CSP 𝑃 = (𝑎 → 𝑃|𝑏 → 𝑄) gdzie 𝑄 = (𝑎 → 𝑃|𝑏 → 𝑆𝑇𝑂𝑃)",
+        "A": {
+            "1": [
+                "-",
+                "20"
+            ],
+            "2": [
+                "-",
+                "Nieskończony"
+            ],
+            "3": [
+                "+",
+                "2"
+            ],
+            "4": [
+                "-",
+                "1"
+            ],
+            "5": [
+                "-",
+                "3"
+            ]
+        }
+    },
+    "18": {
+        "Q": "Czy prefiksowanie w CSP posiada następujące cechy?",
+        "A": {
+            "1": [
+                "+",
+                "Prefiks jest operatorem (akcją)"
+            ],
+            "2": [
+                "-",
+                "Prefiks to zdarzenie z alfabetu procesu"
+            ],
+            "3": [
+                "-",
+                "W każdym z grupy procesów przetwarzających w interakcji prefiks może być operacją komunikacyjną"
+            ],
+            "4": [
+                "+",
+                "Prefiksowanie jest wykonywane pod warunkiem uzyskania zgody otoczenia procesu"
+            ]
+        }
+    },
+    "19": {
+        "Q": "Które z poniższych własności posiadają zbiory śladów procesów CSP",
+        "A": {
+            "1": [
+                "-",
+                "Zbiór śladów zawiera ślady skończonej długości, tylko jeśli w procesie występuje prefiks"
+            ],
+            "2": [
+                "+",
+                "Zbiór śladów każdego procesu jest domknięty ze względu na operację prefiksu"
+            ],
+            "3": [
+                "-",
+                "Jeśli zbiory śladów dwóch procesów są takie same, to procesy są równoważne w semantyce procesów"
+            ],
+            "4": [
+                "+",
+                "Dwa procesy są równoważne w semantyce śladów, jeśli mają takie same zbiory śladów oraz każdy z tych procesów jest jednoznacznie określony przez swój zbiór śladów"
+            ]
+        }
+    },
+    "20": {
+        "Q": "Który z poniższych warunków określa dywergencje procesu P algebry CSP?",
+        "A": {
+            "1": [
+                "-",
+                "traces(CHAOS_Σ) ⊂ traces(CHAOS_∝P)"
+            ],
+            "2": [
+                "-",
+                "traces(P) = traces(P ∏ CHAOS_∝P)"
+            ],
+            "3": [
+                "+",
+                "{s ∈ traces(P); (P/s) = CHAOS_∝P) gdzie wyrażenie (P/s) oznacza Proces P po wykonaniu śladu s"
+            ],
+            "4": [
+                "-",
+                "{s ∈ traces(P); (P/s) = CHAOS_Σ) gdzie wyrażenie (P/s) oznacza Proces P po wykonaniu śladu s"
+            ]
+        }
+    },
+    "21": {
+        "Q": "Czy specyfikacja w CSP posiada następujące własności?",
+        "A": {
+            "1": [
+                "-",
+                "Specyfikacja oparta jest wyłącznie na obserwacji śladów procesu"
+            ],
+            "2": [
+                "+",
+                "Specyfikacja może stanowić obserwacje ze śladów zachowania się procesu"
+            ],
+            "3": [
+                "+",
+                "Specyfikacja procesu CSP to predykat zawierający zmienne wolne, z których każda opisuje pewien aspekt zachowanie się tego procesu"
+            ]
+        }
+    },
+    "22": {
+        "Q": "Które z poniższych zdań określających zdarzenie CSP jest prawdziwe?",
+        "A": {
+            "1": [
+                "-",
+                "Zdarzenia mogą zachodzić wyłącznie w procesach, z których składa się analizowany system"
+            ],
+            "2": [
+                "-",
+                "Wszystkie zdarzenia zachodzące w procesach składowych systemu są od siebie zależne"
+            ],
+            "3": [
+                "+",
+                "Spotkanie CSP to zdarzenie, w którym uczestniczą co najmniej dwa procesy"
+            ],
+            "4": [
+                "-",
+                "Zdarzenie komunikacyjne zachodzi, kiedy przynajmniej jeden proces wyrazi na to zgodę"
+            ],
+            "5": [
+                "+",
+                "Zdarzenie możemy kojarzyć z operacją i momentem czasu, w którym wykonanie tej operacji jest nieuchronne"
+            ]
+        }
+    },
+    "23": {
+        "Q": "Którą z poniższych własności może posiadać proces CSP?",
+        "A": {
+            "1": [
+                "-",
+                "Przy pomocy symbolu STOP oznacza się zawsze proces, który uległ zakleszczeniu"
+            ],
+            "2": [
+                "+",
+                "Proces oznaczony jako LIVELOCK nie komunikuje się z innymi procesami"
+            ],
+            "3": [
+                "-",
+                "W wyniku zmiany alfabetu procesu uzyskujemy zawsze proces równoważny w semantyce śladów"
+            ]
+        }
+    },
+    "24": {
+        "Q": "Które własności charakteryzują alternatywy wewnętrzną i zewnętrzną procesów algebry CSP?",
+        "A": {
+            "1": [
+                "-",
+                "Alternatywa zewnętrzna jest deterministyczna natomiast alternatywa wewnętrzna jest niedeterministyczna"
+            ],
+            "2": [
+                "-",
+                "W obu przypadkach wybór może być deterministyczny"
+            ],
+            "3": [
+                "+",
+                "Alternatywa zewnętrzna pozwala na wybór jednego z procesów poprzez zajście w jednym z procesów środowiska pierwszego zdarzenia wybieranego procesu. W przypadku alternatywy wewnętrznej o wyborze decyduje proces, w którym ona wystąpi"
+            ]
+        }
+    },
+    "25": {
+        "Q": "W którym z poniższych przypadków alternatywa zewnętrzna procesów jest operacją deterministyczną?",
+        "A": {
+            "1": [
+                "-",
+                "Pierwsze zdarzenia występujące w różnych procesach są od siebie zależne"
+            ],
+            "2": [
+                "-",
+                "Pierwsze zdarzenia występujące w różnych procesach są identyczne"
+            ],
+            "3": [
+                "+",
+                "Pierwsze zdarzenia w każdym z procesów są parami różne"
+            ]
+        }
+    },
+    "26": {
+        "Q": "Który z warunków definiuje sieć Petri nazywaną Uogólnioną Siecią Petri?",
+        "A": {
+            "1": [
+                "-",
+                "Sieć Petri jest k-ograniczona i żywa"
+            ],
+            "2": [
+                "+",
+                "Sieć Petri posiada dowolne wagi łuków"
+            ],
+            "3": [
+                "-",
+                "Sieć Petri jest czysta i żywa"
+            ],
+            "4": [
+                "-",
+                "Sieć Petri posiada jednostkowe wagi łuków"
+            ]
+        }
+    },
+    "27": {
+        "Q": "Który z poniższych warunków jest wystarczający, aby sieć Petri modelująca system współbieżny była k-ograniczona?",
+        "A": {
+            "1": [
+                "-",
+                "Istnieje przynajmniej jeden niepusty niezmiennik miejsc"
+            ],
+            "2": [
+                "+",
+                "Sieć jest pokryta niezmiennikami miejsc"
+            ],
+            "3": [
+                "-",
+                "Sieć jest czysta"
+            ],
+            "4": [
+                "-",
+                "Sieć jest pokryta niezmiennikami tranzycji"
+            ]
+        }
+    },
+    "28": {
+        "Q": "Która z poniższych własności definiuje macierz incydencji uogólnionej sieci Petri?",
+        "A": {}
+    },
+    "29": {
+        "Q": "Zaznacz warunki wystarczające dla grafu osiągalności pewnej sieci Petri pozwalające stwierdzić, że ta sieć nie jest żywa. Należy założyć, że warunki są rozpatrywane oddzielnie.",
+        "A": {}
+    },
+    "30": {
+        "Q": "Z którą z wymienionych poniżej własności sieci Petri łączymy bezpieczeństwo systemu przez nią modelowanego.",
+        "A": {}
+    },
+    "31": {
+        "Q": "Który z warunków jest wystarczający, aby tranzycja t w sieci Petri modelującej system software była żywa?",
+        "A": {}
+    },
+    "32": {
+        "Q": "Rozważmy uogólnioną sieć Petri N = [P, T, A, W, M0], jej zbiór markowań osiągalnych z",
+        "A": {}
+    },
+    "33": {
+        "Q": "Niech N = [P, T, A, W, M0] będzie uogólnioną siecią Petri żywą i k-ograniczoną. Które z poniższych zdań są prawdziwe?",
+        "A": {}
+    },
+    "34": {
+        "Q": "Dla jakiego rodzaju sieci Petri własność “każda tranzycja ma dokładnie jedno miejsce wejściowe i jedno miejsce wyjściowe” stanowi definicję?",
+        "A": {}
+    },
+    "35": {
+        "Q": "Który z warunków jest wystarczający, aby system modelowany przez sieć Petri był sprawiedliwy?",
+        "A": {}
+    },
+    "36": {
+        "Q": "Która z sieci Petri modeluje system bezpieczny?",
+        "A": {}
+    },
+    "37": {
+        "Q": "Który warunek jest wystarczający dla bezpieczeństwa systemu modelowanego siecią Petri?",
+        "A": {}
+    },
+    "38": {
+        "Q": "Niech N = [P, T, A, M0] sieć Petri, oraz L(M0) zbiór ciągów tranzycji wykonywalnych i R(M0) zbiór markowań osiągalnych z markowania początkowego. Które z poniższych zdań są prawdziwe?",
+        "A": {}
+    },
+    "39": {
+        "Q": "Dla jakiej sieci Petri własność “każde miejsce ma dokładnie jedną tranzycję wejściową i jedną tranzycje wyjściową” stanowi definicje?",
+        "A": {}
+    },
+    "40": {
+        "Q": "Niech N = [P, T, A, W, M0] będzie uogólnioną siecią Petri pokrytą niezmiennikami miejsc. Które z poniższych zdań są prawdziwe?",
+        "A": {}
+    },
+    "41": {
+        "Q": "Który z poniższych warunków gwarantuje jednoznaczność obliczenia rozproszonego napiętego przez ślad, którego operacje zaalokowano w pewien sposób na więcej niż jednym procesorze?",
+        "A": {
+            "1": [
+                "+",
+                "Komunikacja ma własność przyczynowego uporządkowania (CO)"
+            ],
+            "2": [
+                "-",
+                "Komunikacja jest pear-to-pear"
+            ],
+            "3": [
+                "-",
+                "Komunikacja jest bez wielokrotnego przyjmowania"
+            ],
+            "4": [
+                "-",
+                "Komunikacja ma skończoną przeszłość"
+            ]
+        }
+    },
+    "42": {
+        "Q": "Które z poniższych właściwości śladu są prawdziwe?",
+        "A": {
+            "1": [
+                "-",
+                "Ślad można przedstawić jednoznacznie w postaci nieskierowanego, spójnego grafu zawierającego skończoną liczbę cykli"
+            ],
+            "2": [
+                "-",
+                "Ślad można przedstawić jednoznacznie w postaci katenacji śladów w1, …, wk złożonych z operacji parami niezależnych, przy czym każda operacja z wp-1 dla k >= p > 1 jest zależna od pewnej operacji z wp"
+            ],
+            "3": [
+                "+",
+                "Ślad można przedstawić jednoznacznie w postaci katenacji śladów w1, …, wk złożonych z operacji parami niezależnych, przy czym każda operacja z wp dla k >= p > 1 jest zależna od pewnej operacji z wp-1"
+            ],
+            "4": [
+                "-",
+                "Ślad można przedstawić jednoznacznie w postaci katenacji łańcuchów w1, …, wk operacji parami zależnych"
+            ]
+        }
+    },
+    "43": {
+        "Q": "Niech A = {a,b,c,d} alfabet skończony oraz I = {(a,c), (a,d)} relacja niezależności. Które z poniższych par wyrazów są elementami tego samego śladu?",
+        "A": {
+            "1": [
+                "-",
+                "acda, aadc"
+            ],
+            "2": [
+                "-",
+                "cdcd, dcdc"
+            ],
+            "3": [
+                "-",
+                "abcd, dbca"
+            ],
+            "4": [
+                "+",
+                "acda, aacd"
+            ]
+        }
+    },
+    "44": {
+        "Q": "Niech A = {a, b, c, d} alfabet skończony oraz I = {(a,c), (a,d)} relacja niezależności. Które z poniższych zbiorów są zbiorami Foaty dla śladu reprezentowanego przez wyraz aacdc?",
+        "A": {
+            "1": [
+                "-",
+                "{a,a,c}"
+            ],
+            "2": [
+                "+",
+                "{c,a}"
+            ],
+            "3": [
+                "-",
+                "{d,c}"
+            ],
+            "4": [
+                "-",
+                "{a,a}"
+            ]
+        }
+    },
+    "45": {
+        "Q": "Jakie korzyści może odnieść inżynier oprogramowania z analizy przetwarzania współbieżnego opisanego śladem Dikerta-Mazurkiewicza w postaci grafu zależności?",
+        "A": {
+            "1": [
+                "-",
+                "Pozwala zawsze na jednoznaczny wybór operacji, od której należy rozpocząć przetwarzanie"
+            ],
+            "2": [
+                "+",
+                "Pomaga zaplanować czaso-optymalne szeregowanie systemu w środowisku rozproszonym"
+            ],
+            "3": [
+                "-",
+                "Pozwala jednoznacznie zdefiniować komunikację w projektowanym systemie"
+            ],
+            "4": [
+                "+",
+                "Pozwala oszacować maksymalną ilość procesorów, jakie może wykorzystać system współbieżny w przypadku przetwarzania równoległego"
+            ]
+        }
+    },
+    "46": {
+        "Q": "Rozważmy obliczenie rozproszone napięte pewnym śladem Dikerta-Mazurkiewicza posiadające komunikacje uporządkowaną przyczynowo (Causality Ordered, CO). Które z poniższych warunków są prawdziwe?",
+        "A": {
+            "1": [
+                "+",
+                "Wszystkie komunikaty wysyłane do tego samego procesora są odbierane w takiej kolejności w jakiej zostały wysłane"
+            ],
+            "2": [
+                "+",
+                "Zbiór stempli zegara wektorowego jednoznacznie opisuje obliczenie rozproszone napięte tym śladem"
+            ],
+            "3": [
+                "+",
+                "Zbiór komunikatów pomiędzy procesorami jest najmniej liczny w porównaniu do innych obliczeń rozproszonych napiętych tym samym śladem"
+            ]
+        }
+    },
+    "47": {
+        "Q": "Obliczenie rozproszone wykorzystuje trzy procesy wirtualne P1, P2, P3. Rozważmy trzy zdarzenia o czasach wektorowych e1 (3, 0, 0), e2 (1, 2, 0), e3 (1, 2, 3), które zaszły odpowiednio na procesorach P1, P2, P3. Które z poniższych zdań są prawdziwe?",
+        "A": {
+            "1": [
+                "-",
+                "e1 poprzedza e3"
+            ],
+            "2": [
+                "+",
+                "Pomiędzy procesami P2 i P3 miała miejsce komunikacja"
+            ],
+            "3": [
+                "+",
+                "e2 poprzedza e3"
+            ],
+            "4": [
+                "+",
+                "e1 i e3 zaszły niezależnie"
+            ]
+        }
+    },
+    "48": {
+        "Q": "Zakładając, że wątek A w języku JAVA poprawnie wywołuje poniższą metodę na obiekcie b: b.wait(2000); Kiedy wątek A znajdzie się w stanie Runnable?",
+        "A": {
+            "1": [
+                "-",
+                "Po zwolnieniu blokady na obiekcie b lub pod dwóch sekundach"
+            ],
+            "2": [
+                "-",
+                "Dwie sekundy po zwolnieniu blokady z obiektu b"
+            ],
+            "3": [
+                "-",
+                "dwie sekundy po tym, gdy inny wątek poprawnie wywoła notify() na obiekcie b"
+            ],
+            "4": [
+                "+",
+                "Gdy inny wątek poprawnie wywoła metodę notify() na obiekcie b"
+            ],
+            "5": [
+                "+",
+                "Po dwóch sekundach"
+            ]
+        }
+    },
+    "49": {
+        "Q": "Które z poniższych metod powodują opuszczenie przez wątek w języku JAVA stanu Running?",
+        "A": {
+            "1": [
+                "+",
+                "sleep(1000)"
+            ],
+            "2": [
+                "-",
+                "notifyAll()"
+            ],
+            "3": [
+                "+",
+                "wait()"
+            ],
+            "4": [
+                "+",
+                "Thread.join()"
+            ],
+            "5": [
+                "-",
+                "notify()"
+            ]
+        }
+    },
+    "50": {
+        "Q": "Które z poniższych metod powodują zwolnienie monitora obiektu o w języku JAVA?",
+        "A": {
+            "1": [
+                "-",
+                "o.sleep(1000)"
+            ],
+            "2": [
+                "-",
+                "o.notify()"
+            ],
+            "3": [
+                "-",
+                "o.notifyAll()"
+            ],
+            "4": [
+                "+",
+                "o.join()"
+            ],
+            "5": [
+                "+",
+                "o.wait()"
+            ]
+        }
+    },
+    "51": {
+        "Q": "Które z poniższych zdań są prawdziwe?",
+        "A": {
+            "1": [
+                "-",
+                "System współbieżny jest zawsze wykonywany w sposób równoległy"
+            ],
+            "2": [
+                "+",
+                "Obliczenia współbieżne może być zaimplementowane i wykonane na pojedynczym procesorze"
+            ],
+            "3": [
+                "+",
+                "System sekwencyjny może być wykonywany na wielu procesorach"
+            ],
+            "4": [
+                "-",
+                "Czas wykonywania obliczenia współbieżnego nie zależy od jego implementacji"
+            ],
+            "5": [
+                "+",
+                "Współbieżność systemu software jest kategorią algorytmiczną a równoległość wykonania jest uzależniona od implementacji i zarządzania jej przetwarzaniem na określonym hardware"
+            ]
+        }
+    },
+    "52": {
+        "Q": "Na które z poniższych działań pozwala znajomość relacji Lamporta pomiędzy zdarzeniami będącymi efektem działania systemu współbieżnego zachodzącymi na różnych procesorach w środowisku rozproszonym?",
+        "A": {
+            "1": [
+                "-",
+                "Obliczenie poprawki w stosunku do czasu ściennego dla każdego z procesorów"
+            ],
+            "2": [
+                "-",
+                "Poprawę nastaw zegarów procesorów gwarantującą konsystencję lokalnego czasu i kolejności zachodzenia zdarzeń"
+            ],
+            "3": [
+                "-",
+                "Poprawną definicją czasu ściennego dla systemu"
+            ],
+            "4": [
+                "+",
+                "Synchronizację zegarów tych procesorów"
+            ]
+        }
+    },
+    "53": {
+        "Q": "Które z poniższych warunków jest wystarczający dla wystąpienia blokady (deadlock) w systemie współbieżnym składającym się z procesów?",
+        "A": {
+            "1": [
+                "-",
+                "Jest stanem, w którym pewna zaplanowana operacja nie posiada gwarancji wykonania po skończonym czasie"
+            ],
+            "2": [
+                "+",
+                "Relacja Lamporta “happen before” pomiędzy zdarzeniami w systemie zawiera cykl"
+            ],
+            "3": [
+                "+",
+                "Jest stanem, w którym każdy proces oczekuje na działanie innego procesu"
+            ],
+            "4": [
+                "-",
+                "Zaszło ostatnie zdarzenie w zbiorze zdarzeń generowanym przez system"
+            ]
+        }
+    },
+    "54": {
+        "Q": "Które z właściwości algorytmicznych i implementacyjnych systemów software mogą występować równocześnie?",
+        "A": {
+            "1": [
+                "+",
+                "Przetwarzanie współbieżne i przetwarzanie rozproszone"
+            ],
+            "2": [
+                "+",
+                "Przetwarzanie sekwencyjne i przetwarzanie rozproszone"
+            ],
+            "3": [
+                "-",
+                "Przetwarzanie sekwencyjne i przetwarzanie rozproszone równoległe"
+            ],
+            "4": [
+                "+",
+                "Przetwarzanie współbieżne i przetwarzanie równoległe"
+            ]
+        }
+    },
+    "55": {
+        "Q": "Który z warunków poprawności programowania współbieżnego jest odpowiednikiem warunku stopu dla programu seryjnego (sekwencyjnego)?",
+        "A": {
+            "1": [
+                "-",
+                "Warunek sprawiedliwości"
+            ],
+            "2": [
+                "+",
+                "Warunek bezpieczeństwa"
+            ],
+            "3": [
+                "-",
+                "Warunek sprawiedliwości i bezpieczeństwa"
+            ],
+            "4": [
+                "-",
+                "Warunek żywotności"
+            ]
+        }
+    },
+    "56": {
+        "Q": "Czym jest sekcja krytyczna procesu?",
+        "A": {
+            "1": [
+                "-",
+                "Każdą częścią procesu, w której wykorzystywany jest zasób współdzielony"
+            ],
+            "2": [
+                "-",
+                "Każdą częścią procesu, dla wykonania której konieczna jest synchronizacja innymi procesami"
+            ],
+            "3": [
+                "-",
+                "Każdą częścią procesu, w której wykorzystywany jest zasób niepodzielny"
+            ],
+            "4": [
+                "+",
+                "Każdą częścią procesu, dla wykonania której konieczna jest synchronizacja z innymi procesami aplikującymi o ten sam zasób niepodzielny"
+            ]
+        }
+    },
+    "57": {
+        "Q": "Który z poniższych warunków musi spełniać funkcja obsługująca komunikację blokującą pomiędzy jednostkami przetwarzającymi [procesami lub wątkami]?",
+        "A": {
+            "1": [
+                "-",
+                "Funkcja wysyłająca komunikat przekazuje sterowanie do procesu macierzystego bezpośrednio po zakończeniu swego wykonania"
+            ],
+            "2": [
+                "-",
+                "Funkcja odbierająca komunikat po sprawdzeniu skrzynki pocztowej lub bufora komunikacyjnego przekazuje sterowanie do procesu macierzystego oraz ustawia flagę w przypadku odebrania komunikatu."
+            ],
+            "3": [
+                "+",
+                "Funkcja wysyłająca komunikat czeka na potwierdzenie odbioru i aż do momentu nadejścia potwierdzenia zawiesza proces"
+            ],
+            "4": [
+                "+",
+                "Funkcja odbierająca komunikat przekazuje sterowanie do procesu macierzystego bezpośrednio po jego odebraniu"
+            ]
+        }
+    },
+    "58": {
+        "Q": "Czym jest zjawisko blokady w systemie współbieżnym złożonym z procesów?",
+        "A": {
+            "1": [
+                "-",
+                "Zatrzymanie pracy jednego ze współbieżnych procesów"
+            ],
+            "2": [
+                "+",
+                "Stanem, w którym każdy proces oczekuje na działanie innego procesu"
+            ],
+            "3": [
+                "+",
+                "Wystąpienie cyklu w relacji Lamporta “happen before” pomiędzy zdarzeniami"
+            ],
+            "4": [
+                "-",
+                "Stanem, w którym proces czekający na dane zdarzenie nie zostaje wznowiony, mimo że zdarzenie to zaszło kilka razy"
+            ]
+        }
+    },
+    "59": {
+        "Q": "Które z poniższych założeń jest przyjmowane w teorii śladów Dikerta-Mazurkiewicza?",
+        "A": {
+            "1": [
+                "-",
+                "Relacja Lamporta “happen before” modelująca system jest równoważnością"
+            ],
+            "2": [
+                "+",
+                "Wyróżniony jest skończony zbiór operacji atomicznych (niepodzielnych, sekwencyjnych) oraz zwrotna (refleksywna) i symetryczna relacja zależności w zbiorze tych operacji"
+            ],
+            "3": [
+                "-",
+                "Wyróżniony jest zbiór operacji atomicznych (niepodzielnych) oraz relacja zwrotna (refleksywna) i antysymetryczna relacja zależności w zbiorze tych operacji"
+            ]
+        }
+    },
+    "60": {
+        "Q": "Które z poniższych warunków są wystarczające dla wystąpienia zagłodzenia w systemie współbieżnym?",
+        "A": {
+            "1": [
+                "-",
+                "Zagłodzenie jest nienaturalnym przerwaniem pracy jednego ze współbieżnych procesów"
+            ],
+            "2": [
+                "+",
+                "Nie można wykonać pewnej zaplanowanej operacji w systemie po skończonym czasie, co spowodowane jest przez otoczenie systemu"
+            ],
+            "3": [
+                "-",
+                "System składa się z procesów. Zagłodzenie jest stanem, w którym każdy z nich oczekuje na działanie innego procesu"
+            ],
+            "4": [
+                "-",
+                "Wystąpienie cyklu w relacji Lamporta “happen before” pomiędzy zdarzeniami w systemie"
+            ],
+            "5": [
+                "+",
+                "Zagłodzenie jest stanem, w którym proces czekający na dane zdarzenie nie zostaje wznowiony, mimo że wystąpiło ono dowolnie dużą, skończoną liczbę razy"
+            ],
+            "6": [
+                "-",
+                "Zagłodzenie jest przejawem braku bezpieczeństwa programu współbieżnego"
+            ]
+        }
+    },
+    "61": {
+        "Q": "Które własności spełnia relacja zachodząca pomiędzy zdarzeniami będącymi efektem działania systemu współbieżnego?",
+        "A": {
+            "1": [
+                "-",
+                "Jest równoważnością"
+            ],
+            "2": [
+                "-",
+                "Zwrotność i przechodniość"
+            ],
+            "3": [
+                "-",
+                "Zwrotność i symetria"
+            ],
+            "4": [
+                "+",
+                "Jest porządkiem częściowym"
+            ]
+        }
+    },
+    "62": {
+        "Q": "Które z warunków są wystarczające, aby rozważany system złożony z procesów był współbieżny?",
+        "A": {
+            "1": [
+                "-",
+                "Składa się z wielu procesów"
+            ],
+            "2": [
+                "+",
+                "Wykonuje się na jednym procesorze i zmiana kolejności wykonania dwóch kolejnych operacji nie zmienia wyniku działania"
+            ],
+            "3": [
+                "-",
+                "Może być wykonywany na wielu procesorach"
+            ],
+            "4": [
+                "-",
+                "Równocześnie wykonuje dwie operacje na dwóch procesorach"
+            ]
+        }
+    },
+    "63": {
+        "Q": "Które z warunków są wystarczające, aby rozważany system współbieżny był sprawiedliwy?",
+        "A": {}
+    },
+    "64": {
+        "Q": "Czym jest zjawisko zagłodzenia w programie współbieżnym?",
+        "A": {}
+    },
+    "65": {
+        "Q": "Zakładając, że zdarzenia konsumpcji i produkcji oddzielone przecinkami następują sekwencyjnie jeden po drugim,",
+        "A": {
+            "1": [
+                "+",
+                "P1(1), P1(10), K1(3), K2(8)"
+            ],
+            "2": [
+                "+",
+                "P1(10), P1(10), K1(3), K2(8), K1(10)"
+            ],
+            "3": [
+                "+",
+                "K1(10), K2(10), P1(1), P1(10)"
+            ],
+            "4": [
+                "-",
+                "P1(5), K1(10), K2(10), P1(5)"
+            ],
+            "5": [
+                "-",
+                "P1(1), K1(10), K2(10), P1(2)"
+            ]
+        }
+    },
+    "66": {
+        "Q": "Które z poniższych własności posiada graf zależności Diekerta będący reprezentacją śladu obliczeń rozproszonych?",
+        "A": {
+            "1": [
+                "-",
+                "Ilość jego węzłów jest równa liczności alfabetu śladu."
+            ],
+            "2": [
+                "+",
+                "Krawędzie mogą wystąpić pomiędzy węzłami etykietowanymi wyłącznie przez operacje zależne."
+            ],
+            "3": [
+                "+",
+                "Węzły reprezentują zdarzenia wykonania operacji z alfabetu."
+            ],
+            "4": [
+                "-",
+                "Krawędzie łączą wyłącznie węzły etykietowane różnymi literami z alfabetu."
+            ]
+        }
+    },
+    "67": {
+        "Q": "Jaka własność relacji Lamporta w zbiorze zdarzeń generowanych przez procesy jest wystarczająca dla stwierdzenia blokady?",
+        "A": {
+            "1": [
+                "+",
+                "Wystąpienie cyklu"
+            ],
+            "2": [
+                "-",
+                "Brak elementu największego"
+            ],
+            "3": [
+                "-",
+                "Relacja Lamporta porządkuje totalnie zbiór zdarzeń."
+            ]
+        }
+    }
+}

@@ -16,7 +16,7 @@ function ai(s, t) {
 
   for (let j = 1; j <= m; j++) {
     for (let i = 1; i <= n; i++) {
-      if (s.charAt(i - 1) == t.charAt(j - 1)) {
+      if (s.charAt(i - 1) === t.charAt(j - 1)) {
         d[i][j] = d[i - 1][j - 1];
       } else {
         d[i][j] = Math.min(d[i - 1][j], d[i][j - 1], d[i - 1][j - 1]) + 1;
@@ -31,102 +31,72 @@ function fillForms(data) {
   const questionAnswerMap = new Map(Object.entries(data));
   console.log("Wypełnianie formularza...");
 
-  // Znajdź wszystkie elementy odpowiedzi
-  const answers = document.querySelectorAll(".answer .d-flex.w-auto");
-  const qtexts = document.querySelectorAll(".qtext");
+  // Znajdź wszystkie elementy z klasą "qtext"
+  const questionElements = document.querySelectorAll('.qtext');
 
-  // Utwórz tablicę do przechowywania tekstu odpowiedzi
-  let answerTexts = [];
-  let qTexts = [];
+  questionElements.forEach((questionElement) => {
+    // Wyciągnij treść pytania z elementu
+    const questionText = questionElement.innerText.trim();
 
-  // Przeiteruj przez wszystkie odpowiedzi i wyciągnij tekst
-  answers.forEach((answer) => {
-    const text = answer.innerText.trim();
-    if (text) {
-      answerTexts.push(text);
-    }
-  });
+    // Wyświetl treść pytania w konsoli
+    console.log("Pytanie ze strony:", questionText);
 
-  qtexts.forEach((answer) => {
-    const text = answer.innerText.trim();
-    if (text) {
-      qTexts.push(text);
-    }
-  });
+    // Porównaj pytanie ze strony z pytaniami z JSON'a
+    let closestQuestion = null;
+    let minDistance = Infinity;
 
-  // Wyświetl lub przetwórz wyciągnięty tekst odpowiedzi
-  console.log(answerTexts);
+    questionAnswerMap.forEach((value, key) => {
+      const distance = ai(questionText.toLowerCase(), value.Q.toLowerCase());
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestQuestion = value;
+      }
+    });
 
-  // Jeśli chcesz wyświetlić tekst w konsoli jako jeden ciąg znaków
-  console.log(answerTexts.join("\n\n"));
+    // Wyświetl najbliższe pytanie i odpowiedzi z JSON'a
+    console.log("Najbardziej pasujące pytanie z JSON:", closestQuestion.Q);
+    console.log("Odpowiedzi z JSON:", closestQuestion.A);
 
-  qtexts.forEach((question) => {
-    const qBox = question.querySelector('[dir="ltr"]');
+    // Sprawdź odpowiedzi
+    const answerElements = questionElement.parentElement.querySelectorAll('.answer .d-flex.w-auto');
+    answerElements.forEach((answerElement) => {
+      const answerText = answerElement.innerText.trim();
+      let minAnswerDistance = Infinity;
+      let closestAnswerSign = '';
 
-    console.log(qBox);
-  });
+      for (let answerKey in closestQuestion.A) {
+        if (closestQuestion.A.hasOwnProperty(answerKey)) {
+          const answerData = closestQuestion.A[answerKey];
+          if (answerData && answerData.length > 1) {
+            const distance = ai(answerText.toLowerCase(), answerData[1].toLowerCase());
+            if (distance < minAnswerDistance) {
+              minAnswerDistance = distance;
+              closestAnswerSign = answerData[0];
+            }
+          } else {
+            console.error(`Invalid answer data format for key ${answerKey}:`, answerData);
+          }
+        }
+      }
+      console.log("Odpowiedź ze strony:", answerText);
+      console.log("Najbliższa odpowiedź z JSON:", closestAnswerSign);
+      console.log("Odległość:", minAnswerDistance);
 
-  answers.forEach((question) => {
-    const answerBox = question.querySelector('[dir="ltr"]');
-
-    console.log(answerBox);
-
-    // if (title) {
-    //   const distance = Array.from(questionAnswerMap.keys()).map((answer) =>
-    //     ai(title.innerText.toLowerCase(), answer)
-    //   );
-    //   const minDistance = Math.min(...distance);
-    //   const closestAnswer = Array.from(questionAnswerMap.keys())[
-    //     distance.indexOf(minDistance)
-    //   ];
-
-    //   const inputField = question.querySelector(
-    //     'input[aria-label="Single line text"]'
-    //   );
-    //   if (inputField) {
-    //     console.log(
-    //       `Pytanie na tekst: ${
-    //         title.innerText
-    //       } z odpowiedzią: ${questionAnswerMap.get(closestAnswer)}`
-    //     );
-    //     inputField.value = questionAnswerMap.get(closestAnswer);
-    //     inputField.dispatchEvent(new Event("input", { bubbles: true }));
-    //     inputField.dispatchEvent(new Event("change", { bubbles: true }));
-    //   } else {
-    //     const choiceItems = question.querySelectorAll(
-    //       '[data-automation-id="choiceItem"]'
-    //     );
-    //     if (choiceItems.length > 0) {
-    //       console.log(
-    //         `Pytanie z wyborem: ${title.innerText} z ${choiceItems.length} opcjami`
-    //       );
-    //       const answer = questionAnswerMap.get(closestAnswer);
-    //       const choiceItem = Array.from(choiceItems).find((choiceItem) =>
-    //         choiceItem.innerText.toLowerCase().includes(answer.toLowerCase())
-    //       );
-    //       console.log(
-    //         `Wybieranie odpowiedzi: ${answer} z ${Array.from(choiceItems)
-    //           .map((choiceItem) => choiceItem.innerText)
-    //           .join(", ")}`
-    //       );
-    //       console.log(choiceItem);
-    //       if (choiceItem) {
-    //         const field = choiceItem.querySelector('input[type="radio"]');
-    //         field.click();
-    //       } else {
-    //         console.log(`Nie znaleziono odpowiedzi: ${answer}`);
-    //       }
-    //     } else {
-    //       console.log(
-    //         `Pytanie bez rozpoznanej formy odpowiedzi: ${title.innerText}`
-    //       );
-    //     }
-    //   }
-    //}
+      // Jeśli odległość jest mniejsza niż 40, zmień kolor odpowiedzi
+      if (minAnswerDistance < 7) {
+        if (closestAnswerSign === '+') {
+          answerElement.style.color = 'green';
+        } else if (closestAnswerSign === '-') {
+          answerElement.style.color = 'red';
+        }
+      }
+    });
   });
 }
 
-fetch(chrome.runtime.getURL("data.json"))
+const jsonUrl = chrome.runtime.getURL("output.json");
+
+fetch(jsonUrl)
   .then((response) => response.json())
   .then((data) => {
     fillForms(data);
