@@ -31,9 +31,26 @@ function fillForms(data) {
   const questionAnswerMap = new Map(Object.entries(data));
   console.log("Wypełnianie formularza...");
 
-  const answers = document.querySelectorAll('[class="answer"]');
+  // Znajdź wszystkie elementy odpowiedzi
+  const answers = document.querySelectorAll('.answer .d-flex.w-auto');
 
-  console.log(answers);
+  // Utwórz tablicę do przechowywania tekstu odpowiedzi
+  let answerTexts = [];
+
+  // Przeiteruj przez wszystkie odpowiedzi i wyciągnij tekst
+  answers.forEach(answer => {
+    const text = answer.innerText.trim();
+    if (text) {
+      answerTexts.push(text);
+    }
+  });
+
+  // Wyświetl lub przetwórz wyciągnięty tekst odpowiedzi
+  console.log(answerTexts);
+
+  // Jeśli chcesz wyświetlić tekst w konsoli jako jeden ciąg znaków
+  console.log(answerTexts.join('\n\n'));
+
 
   answers.forEach((question) => {
     const answerBox = question.querySelector('[dir="ltr"]');
