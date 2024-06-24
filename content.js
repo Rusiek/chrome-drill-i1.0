@@ -85,9 +85,10 @@ function fillForms(data) {
       // Jeśli odległość jest mniejsza niż 40, zmień kolor odpowiedzi
       if (minAnswerDistance < 7) {
         if (closestAnswerSign === '+') {
-          answerElement.style.color = 'green';
-        } else if (closestAnswerSign === '-') {
-          answerElement.style.color = 'red';
+          answerElement.style.color = '#555';
+        // } else if (closestAnswerSign === '-') {
+        //   answerElement.style.color = 'red';
+        // 
         }
       }
     });
