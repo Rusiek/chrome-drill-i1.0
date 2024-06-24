@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Autouzupełnianie formularza</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="noData"> 
+        <h1>Wprowadź dane</h1>
+        <form id="dataForm">
+            <label for="firstName">Imię:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Nazwisko:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="phoneNumber">Telefon:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+
+            <label for="index">Numer indeksu:</label>
+            <input type="text" id="index" name="index" required>
+            
+            <label for="year">Rok studiów:</label>
+            <input type="text" id="year" name="year" required>
+
+            <label for="field">Kierunek:</label>
+            <input type="text" id="field" name="field" required>
+
+            <button type="submit">Zapisz</button>
+        </form>
+    </div>
+    <div id="withData" style="display:none;">
+        <h1> ROZPIERDOL FORMULARZ!!!</h1>
+        <button type="change" id="changeData">Zmień dane</button>
+        <button type="fill" id="fillForm">Uzupełnij formularz</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
