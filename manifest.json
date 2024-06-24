@@ -1,22 +1,21 @@
 {
-  "manifest_version": 2,
-  "name": "WRSS Destroyer",
+  "manifest_version": 3,
+  "name": "Auto Form Filler",
   "version": "1.0",
-  "permissions": [
-    "activeTab",
-    "storage"
-  ],
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["content_script.js"]
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
     }
   ],
-  "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
-  },
-  "icons": {
-    "48": "icon.png"
-  }
+  "web_accessible_resources": [
+    {
+      "resources": ["data.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
