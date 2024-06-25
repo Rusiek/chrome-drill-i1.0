@@ -29,14 +29,10 @@ function ai(s, t) {
 
 function fillForms(data) {
   const questionAnswerMap = new Map(Object.entries(data));
-  console.log("Wypełnianie formularza...");
-
   const questionElements = document.querySelectorAll('.qtext');
 
   questionElements.forEach((questionElement, questionIndex) => {
     const questionText = questionElement.innerText.trim();
-
-    console.log("Pytanie ze strony:", questionText);
 
     let closestQuestion = null;
     let minDistance = Infinity;
@@ -49,11 +45,7 @@ function fillForms(data) {
       }
     });
 
-    console.log("Najbardziej pasujące pytanie z JSON:", closestQuestion.Q);
-    console.log("Odpowiedzi z JSON:", closestQuestion.A);
-
     if (minDistance > 10) {
-      console.error("Nie udało się znaleźć odpowiedzi na pytanie:", questionText);
       return;
     }
 
@@ -72,34 +64,31 @@ function fillForms(data) {
               minAnswerDistance = distance;
               closestAnswerSign = answerData[0];
             }
-          } else {
-            console.error(`Invalid answer data format for key ${answerKey}:`, answerData);
           }
         }
       }
 
-      console.log("Odpowiedź ze strony:", answerText);
-      console.log("Najbliższa odpowiedź z JSON:", closestAnswerSign);
-      console.log("Odległość:", minAnswerDistance);
-
-      // Opóźnienie 3 sekundy dla każdego checkboxa
-      const checkbox = answerElement.closest('.r0, .r1').querySelector('input[type="checkbox"]');
-      if (checkbox) {
-        setTimeout(() => {
-          if (minAnswerDistance < 10 && closestAnswerSign === '+') {
-            checkbox.checked = true;
-          }
-        }, (questionIndex * answerElements.length + answerIndex + 1) * 3000); // Opóźnienie 3 sekundy dla każdego checkboxa
+      if (minAnswerDistance < 10) {
+        if (closestAnswerSign === '+') {
+          answerElement.innerHTML += ' <span style="color: #e7f3f5;">+</span>';
+        } else {
+          answerElement.innerHTML += ' <span style="color: #e7f3f5;">-</span>';
+        }
       }
     });
   });
 }
 
-const jsonUrl = chrome.runtime.getURL("output.json");
+// Zastąp ten obiekt własnym JSON'em
+const data = {
+  "1": {
+    "Q": "Example question?",
+    "A": {
+      "a": ["+", "Example answer A"],
+      "b": ["-", "Example answer B"],
+      "c": ["-", "Example answer C"]
+    }
+  },
+}
 
-fetch(jsonUrl)
-  .then((response) => response.json())
-  .then((data) => {
-    fillForms(data);
-  })
-  .catch((error) => console.error("Error fetching data:", error));
+fillForms(data);
