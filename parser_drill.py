@@ -29,9 +29,11 @@ def process_data_file(filepath):
 
     return json.dumps(questions, ensure_ascii=False, indent=4)
 
-# Save the output to a JSON file
-output_json = process_data_file('/home/rusiek/Studia/chrome-sidebar/tw-drill.txt')
-with open('output.json', 'w', encoding='utf-8') as json_file:
-    json_file.write(output_json)
 
-print("Dane zostały przetworzone i zapisane w pliku output.json")
+if __name__ == '__main__':
+    import sys
+    output_json = process_data_file(sys.argv[1])
+    with open('output.json', 'w', encoding='utf-8') as json_file:
+        json_file.write(output_json)
+
+    print("Dane zostały przetworzone i zapisane w pliku output.json")
