@@ -31,17 +31,13 @@ function fillForms(data) {
   const questionAnswerMap = new Map(Object.entries(data));
   console.log("Wypełnianie formularza...");
 
-  // Znajdź wszystkie elementy z klasą "qtext"
   const questionElements = document.querySelectorAll('.qtext');
 
-  questionElements.forEach((questionElement) => {
-    // Wyciągnij treść pytania z elementu
+  questionElements.forEach((questionElement, questionIndex) => {
     const questionText = questionElement.innerText.trim();
 
-    // Wyświetl treść pytania w konsoli
     console.log("Pytanie ze strony:", questionText);
 
-    // Porównaj pytanie ze strony z pytaniami z JSON'a
     let closestQuestion = null;
     let minDistance = Infinity;
 
@@ -53,14 +49,17 @@ function fillForms(data) {
       }
     });
 
-    // Wyświetl najbliższe pytanie i odpowiedzi z JSON'a
     console.log("Najbardziej pasujące pytanie z JSON:", closestQuestion.Q);
     console.log("Odpowiedzi z JSON:", closestQuestion.A);
 
-    // Sprawdź odpowiedzi
+    if (minDistance > 10) {
+      console.error("Nie udało się znaleźć odpowiedzi na pytanie:", questionText);
+      return;
+    }
+
     const answerElements = questionElement.parentElement.querySelectorAll('.answer .d-flex.w-auto');
-    answerElements.forEach((answerElement) => {
-      const answerText = answerElement.innerText.trim();
+    answerElements.forEach((answerElement, answerIndex) => {
+      let answerText = answerElement.innerText.trim();
       let minAnswerDistance = Infinity;
       let closestAnswerSign = '';
 
@@ -78,18 +77,19 @@ function fillForms(data) {
           }
         }
       }
+
       console.log("Odpowiedź ze strony:", answerText);
       console.log("Najbliższa odpowiedź z JSON:", closestAnswerSign);
       console.log("Odległość:", minAnswerDistance);
 
-      // Jeśli odległość jest mniejsza niż 40, zmień kolor odpowiedzi
-      if (minAnswerDistance < 7) {
-        if (closestAnswerSign === '+') {
-          answerElement.style.color = '#555';
-        // } else if (closestAnswerSign === '-') {
-        //   answerElement.style.color = 'red';
-        // 
-        }
+      // Opóźnienie 3 sekundy dla każdego checkboxa
+      const checkbox = answerElement.closest('.r0, .r1').querySelector('input[type="checkbox"]');
+      if (checkbox) {
+        setTimeout(() => {
+          if (minAnswerDistance < 10 && closestAnswerSign === '+') {
+            checkbox.checked = true;
+          }
+        }, (questionIndex * answerElements.length + answerIndex + 1) * 3000); // Opóźnienie 3 sekundy dla każdego checkboxa
       }
     });
   });
